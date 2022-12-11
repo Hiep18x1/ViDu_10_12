@@ -1,7 +1,13 @@
 using Microsoft.EntityFrameworkCore;
 using PokemonReviewApp.Data;
+using PokemonReviewApp.Interfaces;
+using PokemonReviewApp.Repositories;
+using System.Text.Json.Serialization;
+using PokemonReviewApp.Controllers;
+using Microsoft.AspNetCore.Mvc;
 using System.Text.Json.Serialization;
 
+[assembly: ApiController]
 namespace PokemonReviewApp
 {
     public class Program
@@ -14,11 +20,12 @@ namespace PokemonReviewApp
 
             builder.Services.AddControllers();
             builder.Services.AddTransient<Seed>();
+            builder.Services.AddScoped<IpokemonRepository, PokemonRepository>();
 
             builder.Services.AddControllers().AddJsonOptions(x =>
                 x.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles);
-            /*builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
-            builder.Services.AddScoped<IPokemonRepository, PokemonRepository>();
+            //builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+/*            builder.Services.AddScoped<IPokemonRepository, PokemonRepository>();
             builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
             builder.Services.AddScoped<ICountryRepository, CountryRepository>();
             builder.Services.AddScoped<IOwnerRepository, OwnerRepository>();
@@ -48,16 +55,20 @@ namespace PokemonReviewApp
             }
 
             // Configure the HTTP request pipeline.
+
             if (app.Environment.IsDevelopment())
             {
                 app.UseSwagger();
                 app.UseSwaggerUI();
             }
-
+            /*app.UseMvc(routeBuilder =>
+            {
+                routeBuilder.MapRoute("api_default", "{controller}/{action}/{id?}");
+            });*/
             app.UseHttpsRedirection();
 
             app.UseAuthorization();
-
+            
 
             app.MapControllers();
 
