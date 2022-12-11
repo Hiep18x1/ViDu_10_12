@@ -38,6 +38,7 @@ namespace PokemonReviewApp
                         },
                         Owner = new Owner()
                         {
+                            Name = "Tokuda",
                             Gym = "Brocks Gym",
                             Country = new Country()
                             {
@@ -67,6 +68,7 @@ namespace PokemonReviewApp
                         },
                         Owner = new Owner()
                         {
+                            Name = "Eimi Fukada",
                             Gym = "Mistys Gym",
                             Country = new Country()
                             {
@@ -96,6 +98,7 @@ namespace PokemonReviewApp
                         },
                         Owner = new Owner()
                         {
+                            Name = "Tsubasa Amami",
                             Gym = "Ashs Gym",
                             Country = new Country()
                             {
