@@ -54,5 +54,10 @@ namespace PokemonReviewApp.Controllers
                 return BadRequest();
             return Ok(pokemons);
         }
+
+        [HttpPost]
+        [ProducesResponseType(204)]
+        [ProducesResponseType(400)]
+        public IActionResult CreateCategory([FromBody] )
     }
 }
