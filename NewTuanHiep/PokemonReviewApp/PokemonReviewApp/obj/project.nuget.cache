@@ -1,14 +1,16 @@
 {
   "version": 2,
-  "dgSpecHash": "rjkxIZhqG991j5jDGq5KXezBC9qG+2JjM+ZkmGNloiW2gUCQxgC5gD6VgVFT5L7nXAmK4kgZgkEhuC4Na6CSXA==",
+  "dgSpecHash": "9BSsS6DMHkHdMn6b2NN9Zv/4296vLpVT9oh/y/t47LkWziqGCY4igh+TalnkLEIG7KE3/NUQ+cZzY6xcY0Rg2w==",
   "success": true,
   "projectFilePath": "C:\\Users\\Nguyen Hiep\\Documents\\GitHub\\ViDu_10_12\\NewTuanHiep\\PokemonReviewApp\\PokemonReviewApp\\PokemonReviewApp.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Nguyen Hiep\\.nuget\\packages\\automapper\\12.0.0\\automapper.12.0.0.nupkg.sha512",
+    "C:\\Users\\Nguyen Hiep\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.0\\automapper.extensions.microsoft.dependencyinjection.12.0.0.nupkg.sha512",
     "C:\\Users\\Nguyen Hiep\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\Nguyen Hiep\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",
     "C:\\Users\\Nguyen Hiep\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\Nguyen Hiep\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
-    "C:\\Users\\Nguyen Hiep\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
+    "C:\\Users\\Nguyen Hiep\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\Nguyen Hiep\\.nuget\\packages\\microsoft.data.sqlclient\\5.0.1\\microsoft.data.sqlclient.5.0.1.nupkg.sha512",
     "C:\\Users\\Nguyen Hiep\\.nuget\\packages\\microsoft.data.sqlclient.sni.runtime\\5.0.1\\microsoft.data.sqlclient.sni.runtime.5.0.1.nupkg.sha512",
     "C:\\Users\\Nguyen Hiep\\.nuget\\packages\\microsoft.entityframeworkcore\\7.0.0\\microsoft.entityframeworkcore.7.0.0.nupkg.sha512",
