@@ -4,6 +4,7 @@ using PokemonReviewApp.Dto;
 using PokemonReviewApp.Interfaces;
 using PokemonReviewApp.Models;
 using PokemonReviewApp.Repositories;
+using System.Collections.Immutable;
 
 namespace PokemonReviewApp.Controllers
 {
@@ -58,6 +59,27 @@ namespace PokemonReviewApp.Controllers
         [HttpPost]
         [ProducesResponseType(204)]
         [ProducesResponseType(400)]
-        public IActionResult CreateCategory([FromBody] )
+        public IActionResult CreateCategory([FromBody] CategoryDto categoryCreate)
+        {
+            if (categoryCreate == null)
+                return BadRequest();
+            var category = _categoryRepository.GetCategories()
+                .Where(c => c.Name.Trim().ToUpper() == categoryCreate.Name.Trim().ToUpper())
+                .FirstOrDefault();
+            if(category != null)
+            {
+                ModelState.AddModelError("", "category already exists");
+                return StatusCode(422, ModelState);
+            }
+            if(!ModelState.IsValid)
+                return BadRequest(ModelState);
+            var categoryMap = _mapper.Map<Category>(categoryCreate);
+            if (!_categoryRepository.CreateCategory(categoryMap))
+            {
+                ModelState.AddModelError("", "Something went wrong while saving");
+                return StatusCode(400, ModelState);
+            }
+            return Ok("Successfully created");
+        }
     }
 }

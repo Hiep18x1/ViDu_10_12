@@ -1,6 +1,7 @@
 ﻿using PokemonReviewApp.Data;
 using PokemonReviewApp.Interfaces;
 using PokemonReviewApp.Models;
+using System.Diagnostics.Metrics;
 
 namespace PokemonReviewApp.Repositories
 {
@@ -11,7 +12,10 @@ namespace PokemonReviewApp.Repositories
         public OwnerReository(DataContext context)
         {
            _context = context;
-        } 
+        }
+
+        
+
         public Owner GetOwner(int ownerId)
         {
             return _context.Owners.Where(o => o.Id == ownerId).FirstOrDefault();
@@ -35,6 +39,17 @@ namespace PokemonReviewApp.Repositories
         public bool OwnerExists(int ownerId)
         {
             return _context.Owners.Any(o => o.Id == ownerId);       
+        }
+
+        public bool CreateOwner(Owner owner)
+        {
+            _context.Add(owner);
+            return Save();
+        }
+        public bool Save()
+        {
+            var saved = _context.SaveChanges();
+            return saved > 0 ? true : false;
         }
     }
 }
